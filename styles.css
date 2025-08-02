@@ -1,0 +1,254 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* 全局样式 - 允许垂直滚动 */
+body {
+    background-color: #0f172a;
+    background-image: 
+        radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+        radial-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    color: #e2e8f0;
+    padding: 15px;
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 布局容器 */
+.app-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* 大屏幕布局 */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .main-content {
+        flex: 1;
+    }
+    
+    .log-container {
+        width: 400px;
+        flex-shrink: 0;
+        height: calc(100vh - 30px);
+        position: sticky;
+        top: 15px;
+    }
+}
+
+/* 小屏幕布局 */
+@media (max-width: 1199px) {
+    .log-container {
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+    }
+}
+
+/* 标题样式 */
+h2 {
+    color: #38bdf8;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+	text-align: center; /* 文本水平居中 */
+    margin-left: auto;  /* 自动外边距辅助居中 */
+    margin-right: auto
+}
+
+
+h3 {
+    color: #38bdf8 !important; /* 使用与h2相同的蓝色，保持一致性 */
+}
+
+/* 如果需要更鲜艳的蓝色，可以使用这个值 */
+/* h3 {
+    color: #3b82f6 !important;
+} */
+
+}
+
+
+/* 功能区块样式 */
+.section {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* 按钮组样式 */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* 按钮通用样式 */
+button {
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 搜索蓝牙按钮 - 蓝色 */
+#connectbutton {
+    background-color: #3b82f6; /* 蓝色 */
+}
+
+#connectbutton:hover {
+    background-color: #60a5fa;
+}
+
+/* 重新链接按钮 - 绿色 */
+#reconnect-btn {
+    background-color: #10b981; /* 绿色 */
+}
+
+#reconnect-btn:hover {
+    background-color: #34d399;
+}
+
+/* 清空日志按钮 - 红色 */
+#clear-log-btn {
+    background-color: #ef4444; /* 红色 */
+}
+
+#clear-log-btn:hover {
+    background-color: #f87171;
+}
+
+/* 主要操作按钮 */
+#upload-image-btn {
+    background-color: #8b5cf6; /* 紫色，与其他按钮区分 */
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin: 15px 0;
+    display: block;
+}
+
+#upload-image-btn:hover {
+    background-color: #a78bfa;
+}
+
+/* 其他按钮样式 */
+button:not(#connectbutton):not(#reconnect-btn):not(#clear-log-btn):not(#upload-image-btn) {
+    background-color: #1e293b;
+    border: 1px solid #38bdf8;
+    color: #e2e8f0;
+}
+
+button:not(#connectbutton):not(#reconnect-btn):not(#clear-log-btn):not(#upload-image-btn):hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+/* 输入控件样式 */
+input, select, textarea {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin: 5px 0;
+}
+
+/* 画布区域样式 */
+#canvas-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+#tool-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: 6px;
+}
+
+#canvas {
+    background-color: white;
+    border-radius: 4px;
+    margin: 0 auto;
+    border: 1px solid #38bdf8;
+    max-width: 100%;
+}
+
+/* 日志区域样式 */
+#log-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#log {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: auto;
+    color: #94a3b8;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    flex-grow: 1;
+}
+
+/* 小屏幕优化 */
+@media (max-width: 768px) {
+    .button-group, #tool-box {
+        gap: 5px;
+    }
+    
+    button, input, select {
+        padding: 5px 8px;
+        font-size: 0.85em;
+    }
+    
+    #tool-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #tool-box > * {
+        width: 100%;
+        margin: 3px 0;
+    }
+}
